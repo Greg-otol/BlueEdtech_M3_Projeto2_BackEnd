@@ -3,7 +3,7 @@ const toDoListsService = require("../services/toDoLists.services");
 const allToDoListsController = async (req, res) => {
   const alltoDoLists = await toDoListsService.allToDoListsService();
   if (alltoDoLists.length == 0) {
-    return res.status(404).send({ message: "Nenhuma tarefa cadastrada!" });
+    return res.status(204).send({ message: "Nenhuma tarefa cadastrada!" });
   }
   res.send(alltoDoLists);
 };
@@ -35,7 +35,7 @@ const updateToDoListController = async (req, res) => {
     idParam,
     toDoListEdit
   );
-  res.send({
+  res.status(200).send({
     message: `A tarefa '${chosenToDoList.name.toUpperCase()}' foi editada para '${toDoListEdit.name.toUpperCase()}'!`,
     updatedToDoList,
   });
@@ -47,7 +47,7 @@ const deleteToDoListController = async (req, res) => {
     idParam
   );
   await toDoListsService.deleteToDoListservice(idParam);
-  res.send({
+  res.status(200).send({
     message: `Tarefa '${chosenToDoList.name.toUpperCase()}' removida com sucesso!`,
   });
 };
