@@ -1,6 +1,6 @@
-# BlueEdtech_M3_ToDoList1
+# BlueEdtech_M3_ToDoList2
 
-First module 3 project
+Second project of module 3.
 
 Back End
 
@@ -25,7 +25,9 @@ Nodemon
 
 Cors
 
-No Projeto To Do List, foi desenvolvido o CRUD simples com dados em memória RAM, onde podemos listar, criar, atualizar e apagar uma das listas.
+MongoDB
+
+No Projeto To Do List 2, foi desenvolvido o CRUD simples com dados salvos no MongoDB, onde podemos visualizar, criar, atualizar e apagar as listas de tarefas.
 
 
 <div style="display: flex;" style="gap: 10;">
@@ -39,6 +41,8 @@ No Projeto To Do List, foi desenvolvido o CRUD simples com dados em memória RAM
 <img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/nodemon.svg" height="150" width="150"/>
 
 <img src="https://addons.mozilla.org/user-media/previews/full/227/227652.png?modified=1622133270" height="150" width="150"/>
+
+<img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/mongodb.svg" height="150" width="150"/>
 
 </div>
 
