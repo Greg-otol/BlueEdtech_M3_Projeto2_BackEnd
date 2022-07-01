@@ -2,30 +2,30 @@
 
 Second project of module 3.
 
-Back End
++ Back End
 
 Para realizar os testes na API, pode ser usado:
 
-Thunder Client
++ Thunder Client
 
-Postman
++ Postman
 
-Insomnia
++ Insomnia
 
 
 Projeto desenvolvido com as tecnologias:
 
-Javascript
++ Javascript
 
-NodeJs
++ NodeJs
 
-Express
++ Express
 
-Nodemon
++ Nodemon
 
-Cors
++ Cors
 
-MongoDB
++ MongoDB
 
 No Projeto To Do List 2, foi desenvolvido o CRUD simples com dados salvos no MongoDB, onde podemos visualizar, criar, atualizar e apagar as listas de tarefas.
 
