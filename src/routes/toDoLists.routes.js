@@ -1,15 +1,12 @@
 const routes = require('express').Router();
 const toDoListsController = require('../controllers/toDoLists.controllers');
 
-const {
-  validId,
-  validObjectBody,
-} = require('../middlewares/todolist.middleware');
+const valid = require('../middlewares/todolist.middleware');
 
-routes.get('/all-todolists', toDoListsController.allToDoListsController);
-routes.get('/find-todolist/:id', validId, toDoListsController.findToDoListByIdController);
-routes.post('/create', validObjectBody, toDoListsController.createToDoListController);
-routes.put('/update/:id', validId, validObjectBody, toDoListsController.updateToDoListController);
-routes.delete('/delete/:id', validId, toDoListsController.deleteToDoListController);
+routes.get('/all-todolists', valid.validAllToDoLists, toDoListsController.allToDoListsController);
+routes.get('/find-todolist/:id', valid.validId, toDoListsController.findToDoListByIdController);
+routes.post('/create', valid.validObjectBody, toDoListsController.createToDoListController);
+routes.put('/update/:id', valid.validId, valid.validObjectBody, toDoListsController.updateToDoListController);
+routes.delete('/delete/:id', valid.validId, toDoListsController.deleteToDoListController);
 
 module.exports = routes;

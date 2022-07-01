@@ -16,7 +16,8 @@ const createToDoListservice = async (newToDoList) => {
 };
 
 const updateToDoListservice = async (id, toDoListEdited) => {
-  const updateToDoList = await ToDoLists.findByIdAndUpdate(id, toDoListEdited);
+  const updateToDoList = await ToDoLists.findByIdAndUpdate(id, toDoListEdited)
+  .setOptions({ returnOriginal: false });
   return updateToDoList;
 };
 

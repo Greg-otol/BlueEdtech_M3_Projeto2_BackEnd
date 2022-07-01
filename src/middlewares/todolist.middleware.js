@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ToDoList = require("../models/ToDoList");
 
 const validId = (req, res, next) => {
   const idParam = req.params.id;
@@ -18,7 +19,16 @@ const validObjectBody = (req, res, next) => {
   next();
 };
 
+const validAllToDoLists = async (req, res, next) => {
+  const toDoList = await ToDoList.find();
+  if (toDoList.length == 0) {
+    return res.status(400).send({ message: "Nenhuma tarefa cadastrada!" });
+  }
+  next();
+};
+
 module.exports = {
   validId,
   validObjectBody,
+  validAllToDoLists,
 };

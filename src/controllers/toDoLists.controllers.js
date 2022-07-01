@@ -2,9 +2,6 @@ const toDoListsService = require("../services/toDoLists.services");
 
 const allToDoListsController = async (req, res) => {
   const alltoDoLists = await toDoListsService.allToDoListsService();
-  if (alltoDoLists.length == 0) {
-    return res.status(204).send({ message: "Nenhuma tarefa cadastrada!" });
-  }
   res.send(alltoDoLists);
 };
 
@@ -43,6 +40,9 @@ const updateToDoListController = async (req, res) => {
 
 const deleteToDoListController = async (req, res) => {
   const idParam = req.params.id;
+  if (idParam == "") {
+    return res.status(400).send({ message: 'Envie um ID para selecionar a tarefa!' });
+  }
   const chosenToDoList = await toDoListsService.findToDoListByIdService(
     idParam
   );

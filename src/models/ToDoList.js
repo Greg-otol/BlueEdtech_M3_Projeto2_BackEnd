@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const ToDoListSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   description: {
     type: String,
-    require: true,
+    required: true,
   },
   date: {
     type: String,
-    require: true,
+    required: true,
   }
 });
 
