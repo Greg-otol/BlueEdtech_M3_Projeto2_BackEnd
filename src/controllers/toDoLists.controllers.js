@@ -40,12 +40,7 @@ const updateToDoListController = async (req, res) => {
 
 const deleteToDoListController = async (req, res) => {
   const idParam = req.params.id;
-  if (idParam == "") {
-    return res.status(400).send({ message: 'Envie um ID para selecionar a tarefa!' });
-  }
-  const chosenToDoList = await toDoListsService.findToDoListByIdService(
-    idParam
-  );
+  const chosenToDoList = await toDoListsService.findToDoListByIdService(idParam);
   await toDoListsService.deleteToDoListservice(idParam);
   res.status(200).send({
     message: `Tarefa '${chosenToDoList.name.toUpperCase()}' removida com sucesso!`,
