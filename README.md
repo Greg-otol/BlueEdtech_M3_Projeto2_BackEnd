@@ -30,7 +30,7 @@ Projeto desenvolvido com as tecnologias:
 No Projeto To Do List 2, foi desenvolvido o CRUD simples com dados salvos no MongoDB, onde podemos visualizar, criar, atualizar e apagar as listas de tarefas.
 
 
-<div style="display: flex;" style="gap: 20;">
+<div style="display: flex; gap: 20;>
 
 <img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/javascript.svg" height="100" width="100"/>
 
