@@ -32,7 +32,7 @@ No Projeto To Do List 2, foi desenvolvido o CRUD simples com dados salvos no Mon
 
 <div style="display: flex; padding: 2rem;">
 
-<img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/javascript.svg" height="100" width="100"/>
+<img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/javascript.svg" height="100" width="100" style="padding: 2rem;"/>
 
 <img src="https://raw.githubusercontent.com/tomchen/stack-icons/634d5c036a2a7ca0115c94ab2ce86c7e79e01e13/logos/nodejs.svg" height="100" width="100"/>
 
