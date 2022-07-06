@@ -6,6 +6,8 @@ Second project of module 3.
 
 Para realizar os testes na API, pode ser usado:
 
++ http://localhost:3000/api/  (Swagger)
+
 + Thunder Client
 
 + Postman
