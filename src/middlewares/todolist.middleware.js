@@ -4,7 +4,7 @@ const ToDoList = require("../models/ToDoList");
 const validId = (req, res, next) => {
   const idParam = req.params.id;
   if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Tarefa não encontrada!" });
+    return res.status(206).send({ message: "Tarefa não encontrada!" });
   }
   next();
 };

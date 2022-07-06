@@ -1,0 +1,206 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API To Do List",
+    "description": "CRUD API for To Do List",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "URL de teste"
+    }
+  ],
+  "paths": {
+    "/todolists/all-todolists": {
+      "get": {
+        "summary": "All To Do Lists.",
+        "description": "Route responsible for displaying all tasks registered in the database.",
+        "tags": ["To Do Lists"],
+        "responses": {
+          "206": {
+            "description": "Nenhuma tarefa cadastrada! (Partial content)"
+          },
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ToDoList"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todolists/find-todolist/{id}": {
+      "get": {
+        "summary": "One To Do List",
+        "description": "Route responsible for fetching a task by the given ID.",
+        "tags": ["To Do Lists"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da tarefa para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "206": {
+            "description": "Tarefa não encontrada! (Partial content)"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Paletas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todolists/create": {
+      "post": {
+        "summary": "Create To Do List.",
+        "description": "Route responsible for creating a new task and adding to the database.",
+        "tags": ["To Do Lists"],
+        "responses": {
+          "400": {
+            "description": "Envie todos os campos da tarefa! (Bad Request)"
+          },
+          "201": {
+            "description": "Tarefa criada com sucesso! (Created)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/ToDoList"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToDoList"
+              },
+              "examples": {
+                "ToDoList": {
+                  "value": {
+                    "name": "Estudar",
+                    "description": "Descrição da Tarefa.",
+                    "date": "00/00/0000"
+                  }
+                }
+              }
+            }
+          }
+        }          
+      }
+    },
+    "/todolists/update/{id}": {
+      "put": {
+        "summary": "Update To Do List",
+        "description": "Route responsible for editing a task by the given ID.",
+        "tags": ["To Do Lists"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da tarefa para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToDoList"
+              },
+              "examples": {
+                "ToDoList": {
+                  "value": {
+                    "name": "Estudar",
+                    "description": "Descrição da Tarefa.",
+                    "date": "00/00/0000"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "206": {
+            "description": "Tarefa não encontrada! (Partial content)"
+          },
+          "400": {
+            "description": "Envie todos os campos da tarefa! (Bad Request)"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/ToDoList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todolists/delete/{id}": {
+      "delete": {
+        "summary": "Delete To Do List",
+        "description": "Route responsible for deleting a task by the given ID.",
+        "tags": ["To Do Lists"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da tarefa para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "206": {
+            "description": "Tarefa não encontrada! (Partial content)"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ToDoList": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }  
+}
